@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
-class MainModelView: ViewModel() {
+class MainViewModel: ViewModel() {
 
     private val _categoryState = mutableStateOf(RecipeState())      // State for displaying categories
     val categoriesState: State<RecipeState> = _categoryState        // variable that can be used for accessing state as it is private for abstraction
@@ -19,7 +19,7 @@ class MainModelView: ViewModel() {
         viewModelScope.launch { // This is a coroutine scope or a viewModelScope - it enables us to execute the code on a background thread
             try {
                 // If there is no exception we are updating our list with the list we get from the API service(recipe service), and setting the loading to false
-                val response = recipeService.getCategories()
+                val response = recipeService.getCategories()        // Storing the CategoryList into this
                 _categoryState.value = _categoryState.value.copy(
                     loading = false,
                     list = response.categories,
@@ -34,7 +34,6 @@ class MainModelView: ViewModel() {
             }
         }
     }
-
 
     // Data class used for storing that if the categories are loaded successfully or is there an error or are they still loading
     data class RecipeState(

@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
 // Used retrofit to get the file from themealdb and converting the JSON file into Kotlin object using GsonConvertorFactory
-private val retrofit = Retrofit.Builder().baseUrl("www.themealdb.com/api/json/v1/1/").
+private val retrofit = Retrofit.Builder().baseUrl("https://www.themealdb.com/api/json/v1/1/").
         addConverterFactory(GsonConverterFactory.create()).
         build()
 
