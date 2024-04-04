@@ -19,10 +19,10 @@ class MainViewModel: ViewModel() {
         viewModelScope.launch { // This is a coroutine scope or a viewModelScope - it enables us to execute the code on a background thread
             try {
                 // If there is no exception we are updating our list with the list we get from the API service(recipe service), and setting the loading to false
-                val response = recipeService.getCategories()        // Storing the CategoryList into this
+                val response = recipeService.getCategories()        // Storing the object that contains CategoryList into this
                 _categoryState.value = _categoryState.value.copy(
                     loading = false,
-                    list = response.categories,
+                    list = response.categories,         // Storing the categories list here
                     error = null
                 )
             } catch (e: Exception) {

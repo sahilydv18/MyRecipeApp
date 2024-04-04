@@ -15,5 +15,5 @@ val recipeService = retrofit.create(ApiService::class.java)
 // Interface for API Service
 interface ApiService {
     @GET("categories.php")      // Getting the categories.php file from themealdb
-    suspend fun getCategories():CategoriesResponse      // Give a list of categories
+    suspend fun getCategories():CategoriesResponse      // Give an object that has list of categories
 }
