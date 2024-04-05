@@ -10,7 +10,7 @@ private val retrofit = Retrofit.Builder().baseUrl("https://www.themealdb.com/api
         build()
 
 // used the retrofit variable created above to create our recipeApp Service
-val recipeService = retrofit.create(ApiService::class.java)
+val recipeService: ApiService = retrofit.create(ApiService::class.java)
 
 // Interface for API Service
 interface ApiService {
