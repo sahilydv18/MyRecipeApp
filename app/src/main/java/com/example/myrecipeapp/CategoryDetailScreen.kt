@@ -25,16 +25,16 @@ fun CategoryDetailScreen(category: Category) {
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = category.strCategory, textAlign = TextAlign.Center, fontWeight = FontWeight.Bold)
+        Text(text = category.strCategory, textAlign = TextAlign.Center, fontWeight = FontWeight.Bold)   // Category Name
         Image(painter = rememberAsyncImagePainter(model = category.strCategoryThumb),
             contentDescription = "${category.strCategoryDescription} + thumbnail",
             modifier = Modifier
-                .wrapContentSize()
+                .wrapContentSize()              // Due to this image only take the size it needs
                 .aspectRatio(1f)
         )
         Text(text = category.strCategoryDescription,
             textAlign = TextAlign.Justify,
-            modifier = Modifier.verticalScroll(rememberScrollState())
+            modifier = Modifier.verticalScroll(rememberScrollState())           // This is used to make our text scrollable if we have large text
         )
     }
 }

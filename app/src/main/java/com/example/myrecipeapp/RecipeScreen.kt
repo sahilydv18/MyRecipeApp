@@ -59,7 +59,7 @@ fun CategoryItem(category: Category, navigateToDetail:(Category) -> Unit) {
         modifier = Modifier
             .padding(8.dp)
             .fillMaxSize()
-            .clickable { navigateToDetail(category) },
+            .clickable { navigateToDetail(category) },          // This is used to make a composable acts like a clickable button, every composable have this property
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         // Used this to display image of category
@@ -74,7 +74,6 @@ fun CategoryItem(category: Category, navigateToDetail:(Category) -> Unit) {
         Text(
             text = category.strCategory,
             fontWeight = FontWeight.Bold,
-//            color = Color.Black,
             modifier = Modifier.padding(top = 4.dp)
         )
     }
